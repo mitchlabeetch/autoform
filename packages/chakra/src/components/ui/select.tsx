@@ -87,7 +87,7 @@ export const SelectValueText = React.forwardRef<
   return (
     <ChakraSelect.ValueText {...rest} ref={ref}>
       <ChakraSelect.Context>
-        {(select) => {
+        {(select: ChakraSelect.SelectContext) => {
           const items = select.selectedItems
           if (items.length === 0) return props.placeholder
           if (children) return children(items)

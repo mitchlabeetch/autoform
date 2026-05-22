@@ -18,7 +18,7 @@ export const SelectField: React.FC<AutoFormFieldProps> = ({
       {...props}
       label={label}
       error={error}
-      onChange={(value) => {
+      onChange={(value: string | null) => {
         const event = {
           target: {
             name: field.key,

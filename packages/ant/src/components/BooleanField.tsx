@@ -1,6 +1,6 @@
 import React from "react";
 import { AutoFormFieldProps } from "@autoform/react";
-import { Checkbox } from "antd";
+import { Checkbox, type CheckboxChangeEvent } from "antd";
 import { useController } from "react-hook-form";
 
 export const BooleanField: React.FC<AutoFormFieldProps> = ({
@@ -20,7 +20,7 @@ export const BooleanField: React.FC<AutoFormFieldProps> = ({
       {...props}
       {...formField}
       checked={formField.value}
-      onChange={(e) => {
+      onChange={(e: CheckboxChangeEvent) => {
         formField.onChange(e.target.checked);
       }}
       style={{display: "flex", marginTop: "15px", marginBottom: "5px"}}

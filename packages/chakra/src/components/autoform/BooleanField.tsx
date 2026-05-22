@@ -20,7 +20,7 @@ export const BooleanField: React.FC<AutoFormFieldProps> = ({
       {...props}
       {...formField}
       checked={formField.value}
-      onCheckedChange={({ checked }) => formField.onChange(checked)}
+      onCheckedChange={(details: { checked: boolean }) => formField.onChange(details.checked)}
       style={{ display: "flex", marginTop: "15px", marginBottom: "5px" }}
     >
       <span style={{ lineHeight: "16px", cursor: "pointer" }}>

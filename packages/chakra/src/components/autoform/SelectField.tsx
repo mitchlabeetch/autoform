@@ -32,7 +32,7 @@ export const SelectField: React.FC<AutoFormFieldProps> = ({
       {...props}
       name={formField.name}
       value={[formField.value]}
-      onValueChange={({ value }) => formField.onChange(value[0])}
+      onValueChange={(details: { value: string[] }) => formField.onChange(details.value[0])}
       onInteractOutside={() => formField.onBlur()}
       onBlur={formField.onBlur}
       collection={options}
@@ -43,7 +43,7 @@ export const SelectField: React.FC<AutoFormFieldProps> = ({
         />
       </SelectTrigger>
       <SelectContent>
-        {options.items.map((item) => (
+        {options.items.map((item: { label: string; value: string }) => (
           <SelectItem item={item} key={item.value}>
             {item.label}
           </SelectItem>

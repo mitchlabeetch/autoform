@@ -13,7 +13,7 @@ const Ant = () => {
       antFormProps={{
         layout: "horizontal",
         className: "no-margin-form",
-        onValuesChange: (e) => {
+        onValuesChange: (e: unknown) => {
           console.log("inputChange", e);
         },
         // onFinish: (e) => {
