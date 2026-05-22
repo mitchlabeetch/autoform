@@ -1,0 +1,9 @@
+{
+  "extends": "./packages/typescript-config/base.json",
+  "compilerOptions": {
+    "noEmit": true,
+    "baseUrl": "."
+  },
+  "include": ["apps/web"],
+  "exclude": ["node_modules", "**/.next", "**/dist"]
+}
