@@ -6,6 +6,7 @@ import { CloseButton } from "./close-button"
 import * as React from "react"
 
 interface SelectTriggerProps extends ChakraSelect.ControlProps {
+  children?: React.ReactNode
   clearable?: boolean
 }
 
@@ -123,6 +124,7 @@ export const SelectRoot = React.forwardRef<
 }) as ChakraSelect.RootComponent
 
 interface SelectItemGroupProps extends ChakraSelect.ItemGroupProps {
+  children?: React.ReactNode
   label: React.ReactNode
 }
 

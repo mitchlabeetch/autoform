@@ -39,7 +39,9 @@ export function AutoForm<T extends Record<string, any>>({
   const handleSubmit = async (dataRaw: T) => {
     const data = removeEmptyValues(dataRaw);
     const validationResult = schema.validateSchema(data as T);
-    console.log("validationResult", { validationResult, dataRaw, data });
+    if (process.env.NODE_ENV === "development") {
+      console.log("validationResult", { validationResult, dataRaw, data });
+    }
     if (validationResult.success) {
       await onSubmit(validationResult.data, methods);
     } else {
