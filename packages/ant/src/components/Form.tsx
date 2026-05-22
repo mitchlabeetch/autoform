@@ -16,8 +16,8 @@ export const Form = React.forwardRef<
   return (
     <AntForm
       ref={refForm}
-      onFinish={(e: unknown) => {
-        props.onSubmit?.((e as Record<string, unknown>)[0]);
+      onFinish={(values) => {
+        props.onSubmit?.(values as any);
       }}
       {...props}
     >

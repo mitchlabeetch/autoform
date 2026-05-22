@@ -1,6 +1,6 @@
 "use client"
 
-import type { CollectionItem } from "@chakra-ui/react"
+import type { CollectionItem, UseSelectReturn } from "@chakra-ui/react"
 import { Select as ChakraSelect, Portal } from "@chakra-ui/react"
 import { CloseButton } from "./close-button"
 import * as React from "react"
@@ -88,7 +88,7 @@ export const SelectValueText = React.forwardRef<
   return (
     <ChakraSelect.ValueText {...rest} ref={ref}>
       <ChakraSelect.Context>
-        {(select: ChakraSelect.SelectContext) => {
+        {(select: UseSelectReturn<CollectionItem>) => {
           const items = select.selectedItems
           if (items.length === 0) return props.placeholder
           if (children) return children(items)
