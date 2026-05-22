@@ -20,7 +20,8 @@
   "packageManager": "npm@10.2.4",
   "workspaces": [
     "apps/*",
-    "packages/*"
+    "packages/*",
+    "packages/@dyad-sh/*"
   ],
   "dependencies": {
     "@changesets/cli": "^2.27.9"

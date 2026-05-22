@@ -1,0 +1,35 @@
+{
+  "name": "@dyad-sh/nextjs-webpack-component-tagger",
+  "version": "0.0.1-alpha.0",
+  "description": "A webpack loader for Next.js that automatically adds data-dyad-id and data-dyad-name attributes to React components",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "license": "MIT",
+  "keywords": [
+    "webpack",
+    "loader",
+    "nextjs",
+    "react",
+    "dyad"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs,esm --dts",
+    "dev": "tsup src/index.ts --format cjs,esm --dts --watch"
+  },
+  "dependencies": {
+    "@babel/generator": "^7.24.0",
+    "@babel/parser": "^7.24.0",
+    "@babel/traverse": "^7.24.0",
+    "@babel/types": "^7.24.0"
+  },
+  "devDependencies": {
+    "@autoform/typescript-config": "*",
+    "@types/babel__generator": "^7.6.0",
+    "@types/babel__parser": "^7.1.0",
+    "@types/babel__traverse": "^7.20.0",
+    "@types/node": "^20",
+    "tsup": "^8.3.0",
+    "typescript": "^5"
+  }
+}
