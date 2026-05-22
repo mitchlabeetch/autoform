@@ -11,7 +11,7 @@
   "scripts": {
     "lint": "eslint . --max-warnings 0",
     "build": "tsup src/index.ts --format cjs,esm --dts",
-    "dev": "tsup src/index.ts --format cjs,esm --dts --watch"
+    "dev": "tsup src/index.ts --format cjs,esm --dts --watch --"
   },
   "devDependencies": {
     "@autoform/eslint-config": "*",
