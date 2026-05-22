@@ -2,7 +2,24 @@
   "extends": "./packages/typescript-config/base.json",
   "compilerOptions": {
     "noEmit": true,
-    "baseUrl": "."
+    "baseUrl": ".",
+    "jsx": "preserve",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "paths": {
+      "@/*": ["./packages/shadcn/src/*"],
+      "@autoform/ant": ["./packages/ant/src/index.tsx"],
+      "@autoform/chakra": ["./packages/chakra/src/index.tsx"],
+      "@autoform/mui": ["./packages/mui/src/index.tsx"],
+      "@autoform/mantine": ["./packages/mantine/src/index.tsx"],
+      "@autoform/shadcn": ["./packages/shadcn/src"],
+      "@autoform/shadcn/*": ["./packages/shadcn/src/*"],
+      "@autoform/react": ["./packages/react/src/index.tsx"],
+      "@autoform/zod": ["./packages/zod/src/index.ts"],
+      "@autoform/yup": ["./packages/yup/src/index.ts"],
+      "@autoform/joi": ["./packages/joi/src/index.ts"],
+      "@autoform/core": ["./packages/core/src/index.ts"]
+    }
   },
   "include": ["apps/web"],
   "exclude": ["node_modules", "**/.next", "**/dist"]

@@ -4,7 +4,7 @@ import { AutoFormFieldProps } from "@autoform/react";
 import {
   NumberInputField,
   NumberInputRoot,
-} from "@/components/ui/number-input";
+} from "../ui/number-input";
 
 export const NumberField: React.FC<AutoFormFieldProps> = ({
   id,
@@ -16,7 +16,7 @@ export const NumberField: React.FC<AutoFormFieldProps> = ({
   return (
     <NumberInputRoot
       key={key}
-      onValueChange={({ value }) => {
+      onValueChange={({ value }: { value: string }) => {
         field.onChange(value);
       }}
       w={"full"}

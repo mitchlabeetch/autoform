@@ -12,7 +12,7 @@ export const BooleanField: React.FC<AutoFormFieldProps> = ({
   <div className="flex items-center space-x-2">
     <Checkbox
       id={id}
-      onCheckedChange={(checked) => {
+      onCheckedChange={(checked: boolean | "indeterminate") => {
         // react-hook-form expects an event object
         const event = {
           target: {
