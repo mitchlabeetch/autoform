@@ -113,6 +113,20 @@
   --destructive-foreground: var(--alecia-off-white);
 }
 
+/* ========================== LOCAL FONT FACES ========================== */
+@font-face {
+  font-family: 'Bierstadt';
+  src: local('Bierstadt'), local('Segoe UI');
+  font-weight: 100 900;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Playfair Display';
+  src: local('Playfair Display'), local('Georgia');
+  font-weight: 400 900;
+  font-display: swap;
+}
+
 /* ========================== BASE STYLES ========================== */
 html,
 body {
