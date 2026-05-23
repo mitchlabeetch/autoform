@@ -25,7 +25,6 @@
     "@mantine/dates": "^7.16.0",
     "@mantine/hooks": "^7.16.0",
     "@mui/material": "^6.4.12",
-    "@dyad-sh/nextjs-webpack-component-tagger": "*",
     "dayjs": "^1.11.13",
     "joi": "^17.13.3",
     "next": "^15.3.3",
@@ -37,6 +36,7 @@
   "devDependencies": {
     "@autoform/eslint-config": "*",
     "@autoform/typescript-config": "*",
+    "@dyad-sh/nextjs-webpack-component-tagger": "^0.8.0",
     "@tailwindcss/postcss": "^4.1.10",
     "@types/node": "^20",
     "@types/react": "^19.1.8",
