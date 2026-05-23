@@ -10,7 +10,7 @@ function Mantine() {
       <AutoForm
         schema={zodSchemaProvider}
         onSubmit={(data) => {
-          console.log(JSON.stringify(data, null, 2));
+          console.log({ ...data, password: '[REDACTED]' });
         }}
         withSubmit
       />

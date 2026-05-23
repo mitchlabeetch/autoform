@@ -8,7 +8,7 @@ function Basics() {
     <AutoForm
       schema={zodSchemaProvider}
       onSubmit={(data) => {
-        console.log(JSON.stringify(data, null, 2));
+        console.log({ ...data, password: '[REDACTED]' });
       }}
       onFormInit={(form) => {
         console.log("Form initialized", form);
