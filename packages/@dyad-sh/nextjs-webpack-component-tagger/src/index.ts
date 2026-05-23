@@ -46,7 +46,7 @@ export default function componentTaggerLoader(
   function findComponentName(
     path: NodePath<t.JSXElement>
   ): string | null {
-    let parent = path.parentPath;
+    let parent: NodePath<t.Node> | null = path.parentPath;
 
     // Walk up to find the component declaration
     while (parent) {
@@ -121,7 +121,7 @@ export default function componentTaggerLoader(
    * A root JSX element is one that is returned (directly or indirectly) from a function.
    */
   function isRootJSXElement(path: NodePath<t.JSXElement>): boolean {
-    let parent = path.parentPath;
+    let parent: NodePath<t.Node> | null = path.parentPath;
     while (parent) {
       // Directly inside a return statement: return <jsx>
       if (parent.isReturnStatement()) {
