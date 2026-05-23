@@ -1,15 +1,119 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-bierstadt), sans-serif;
+  --font-serif: var(--font-playfair), serif;
+  --font-outfit: var(--font-outfit), sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, monospace;
+
+  /* Alecia core palette */
+  --color-alecia-midnight: var(--alecia-blue-midnight);
+  --color-alecia-corporate: var(--alecia-blue-corporate);
+  --color-alecia-mid-blue: var(--alecia-blue-mid);
+  --color-alecia-light-blue: var(--alecia-blue-light);
+  --color-alecia-sky: var(--alecia-blue-pale);
+  --color-alecia-ice: var(--alecia-blue-ice);
+  --color-alecia-red: var(--alecia-red-accent);
+  --color-alecia-titanium: var(--alecia-grey-titanium);
+  --color-alecia-steel: var(--alecia-grey-steel);
+  --color-alecia-chrome: var(--alecia-grey-chrome);
+  --color-alecia-cloud: var(--alecia-grey-cloud);
+  --color-alecia-off-white: var(--alecia-off-white);
+
+  /* Radius mapping */
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+/* ========================== ALECIA CORE PALETTE ========================== */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --alecia-blue-midnight: #061a40;
+  --alecia-blue-corporate: #163e64;
+  --alecia-blue-mid: #4370a7;
+  --alecia-blue-light: #749ac7;
+  --alecia-blue-pale: #bfd7ea;
+  --alecia-blue-ice: #e3f2fd;
+  --alecia-red-accent: #b80c09;
+  --alecia-grey-titanium: #6f7a8f;
+  --alecia-grey-steel: #aab1be;
+  --alecia-grey-chrome: #c8ccd5;
+  --alecia-grey-cloud: #e6e8ec;
+  --alecia-off-white: #fafafc;
+
+  --radius: 0.5rem;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ========================== LIGHT MODE MAPS ========================== */
+:root {
+  --background: var(--alecia-off-white);
+  --background-secondary: var(--alecia-grey-cloud);
+  --background-tertiary: var(--alecia-grey-chrome);
+
+  --foreground: var(--alecia-blue-midnight);
+  --foreground-muted: #334155;
+  --foreground-faint: #64748b;
+
+  --accent: var(--alecia-blue-midnight);
+  --accent-light: var(--alecia-blue-light);
+  --accent-dark: var(--alecia-blue-corporate);
+
+  --border: var(--alecia-grey-chrome);
+  --input: var(--alecia-grey-cloud);
+  --ring: var(--alecia-blue-mid);
+
+  --card: #ffffff;
+  --card-foreground: var(--alecia-blue-midnight);
+  --popover: #ffffff;
+  --popover-foreground: var(--alecia-blue-midnight);
+
+  --primary: var(--alecia-blue-midnight);
+  --primary-foreground: var(--alecia-off-white);
+  --secondary: var(--alecia-grey-cloud);
+  --secondary-foreground: var(--alecia-blue-midnight);
+  --muted: var(--alecia-grey-cloud);
+  --muted-foreground: var(--alecia-grey-titanium);
+  --destructive: var(--alecia-red-accent);
+  --destructive-foreground: var(--alecia-off-white);
 }
 
+/* ========================== DARK MODE MAPS ========================== */
+.dark {
+  --background: var(--alecia-blue-midnight);
+  --background-secondary: var(--alecia-blue-corporate);
+  --background-tertiary: var(--alecia-blue-corporate);
+
+  --foreground: var(--alecia-off-white);
+  --foreground-muted: var(--alecia-grey-chrome);
+  --foreground-faint: var(--alecia-grey-steel);
+
+  --accent: var(--alecia-blue-mid);
+  --accent-light: var(--alecia-blue-light);
+  --accent-dark: var(--alecia-blue-midnight);
+
+  --border: var(--alecia-blue-mid);
+  --input: var(--alecia-blue-corporate);
+  --ring: var(--alecia-blue-light);
+
+  --card: var(--alecia-blue-midnight);
+  --card-foreground: var(--alecia-off-white);
+  --popover: var(--alecia-blue-midnight);
+  --popover-foreground: var(--alecia-off-white);
+
+  --primary: var(--alecia-off-white);
+  --primary-foreground: var(--alecia-blue-midnight);
+  --secondary: var(--alecia-blue-corporate);
+  --secondary-foreground: var(--alecia-off-white);
+  --muted: var(--alecia-blue-corporate);
+  --muted-foreground: var(--alecia-grey-chrome);
+  --destructive: var(--alecia-red-accent);
+  --destructive-foreground: var(--alecia-off-white);
+}
+
+/* ========================== BASE STYLES ========================== */
 html,
 body {
   max-width: 100vw;
@@ -19,6 +123,7 @@ body {
 body {
   color: var(--foreground);
   background: var(--background);
+  font-family: var(--font-bierstadt), sans-serif;
 }
 
 * {
@@ -32,12 +137,206 @@ a {
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+/* ========================== NAVY DROP SHADOWS ========================== */
+.shadow-navy-sm {
+  box-shadow: 0 1px 2px 0 rgba(6, 26, 64, 0.05);
+}
+.shadow-navy-md,
+.shadow-navy {
+  box-shadow: 0 4px 6px -1px rgba(6, 26, 64, 0.1),
+    0 2px 4px -1px rgba(6, 26, 64, 0.06);
+}
+.shadow-navy-lg {
+  box-shadow: 0 10px 15px -3px rgba(6, 26, 64, 0.1),
+    0 4px 6px -2px rgba(6, 26, 64, 0.05);
+}
+.shadow-navy-xl {
+  box-shadow: 0 20px 25px -5px rgba(6, 26, 64, 0.1),
+    0 10px 10px -5px rgba(6, 26, 64, 0.04);
+}
+.shadow-navy-2xl {
+  box-shadow: 0 25px 50px -12px rgba(6, 26, 64, 0.25);
+}
+
+/* ========================== GLASSMORPHISM ========================== */
+.glass {
+  background: rgba(250, 250, 252, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(200, 204, 213, 0.5);
+}
+
+.dark .glass {
+  background: rgba(6, 26, 64, 0.85);
+  border-bottom: 1px solid rgba(67, 112, 167, 0.3);
+}
+
+/* ========================== EDITORIAL GRADIENT ========================== */
+.text-gradient-alecia {
+  background: linear-gradient(135deg, #061a40 0%, #163e64 40%, #4370a7 75%, #749ac7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  padding-bottom: 0.15em;
+}
+
+/* ========================== METALLIC BLUE BUTTON ========================== */
+.btn-gold {
+  background: linear-gradient(135deg, #061a40 0%, #163e64 100%);
+  color: #ffffff !important;
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 4px rgba(6, 26, 64, 0.1);
+}
+
+.btn-gold:hover {
+  box-shadow: 0 4px 20px rgba(6, 26, 64, 0.4);
+  transform: translateY(-1.5px);
+  opacity: 0.95;
+}
+
+.btn-gold:active {
+  transform: scale(0.975);
+}
+
+/* ========================== CARD HOVER DEPTH ========================== */
+.card-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform, box-shadow, border-color;
+}
+
+.card-hover:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 48px rgba(6, 26, 64, 0.15);
+  border-color: rgba(6, 26, 64, 0.4);
+}
+
+.dark .card-hover:hover {
+  box-shadow: 0 16px 48px rgba(6, 26, 64, 0.50);
+  border-color: var(--accent);
+}
+
+/* ========================== 3D CARD FLIPPING ========================== */
+.perspective-1000 {
+  perspective: 1000px;
+}
+.transform-style-3d {
+  transform-style: preserve-3d;
+}
+.backface-hidden {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* ========================== VIEWPORT CONTAINMENT ========================== */
+.studio-viewport {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.studio-main {
+  flex: 1;
+  display: grid;
+  overflow: hidden;
+  grid-template-columns: 300px 1fr;
+}
+
+.studio-left-panel,
+.studio-right-panel {
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.scrollbar-thin {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(156, 163, 175, 0.5) transparent;
+}
+
+/* ========================== WCAG FOCUS RINGS ========================== */
+*:focus-visible {
+  outline: 3px solid var(--alecia-blue-mid);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+.dark *:focus-visible {
+  outline-color: var(--alecia-blue-light);
+  box-shadow: 0 0 0 4px rgba(116, 154, 199, 0.3);
+}
+
+/* ========================== REDUCED MOTION ========================== */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }
 
+/* ========================== PRINT SPEC ========================== */
+@media print {
+  body {
+    background: white !important;
+    color: #000000 !important;
+    font-size: 11pt !important;
+    line-height: 1.4 !important;
+  }
+
+  aside, nav, header nav, footer, .dock, button, [data-sonner-toaster] {
+    display: none !important;
+  }
+
+  main, .flex-1 {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  * {
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    page-break-after: avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  table {
+    border-collapse: collapse !important;
+    width: 100% !important;
+    page-break-inside: auto !important;
+  }
+
+  tr {
+    page-break-inside: avoid !important;
+  }
+
+  th {
+    background-color: #f3f4f6 !important;
+    font-weight: 700 !important;
+  }
+
+  .whitespace-nowrap, [class*="tabular-nums"] {
+    white-space: nowrap !important;
+  }
+
+  .print-break-before { page-break-before: always !important; }
+  .print-break-after  { page-break-after: always !important; }
+  .print-avoid-break  { page-break-inside: avoid !important; }
+}
+
+/* ========================== ANT FORM OVERRIDE ========================== */
 .no-margin-form .ant-form-item {
   margin-bottom: 0;
 }

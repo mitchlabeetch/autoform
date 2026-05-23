@@ -8,11 +8,16 @@ import Ant from "../components/Ant";
 
 export default function Home() {
   return (
-    <div>
+    <div className="min-h-screen bg-background text-foreground">
       <Container maxWidth="sm" sx={{ mt: 4, mb: 4 }}>
-        <Card>
+        <Card className="shadow-navy-md card-hover">
           <CardContent>
-            <Typography variant="h4" component="h1" gutterBottom>
+            <Typography
+              variant="h4"
+              component="h1"
+              gutterBottom
+              className="text-gradient-alecia font-serif"
+            >
               Auto Form demo
             </Typography>
             {/* <Basics /> */}

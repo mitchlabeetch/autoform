@@ -3,57 +3,73 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 240 10% 3.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 240 10% 3.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 3.9%;
-    --primary: 240 5.9% 10%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 240 4.8% 95.9%;
-    --secondary-foreground: 240 5.9% 10%;
-    --muted: 240 4.8% 95.9%;
-    --muted-foreground: 240 3.8% 46.1%;
-    --accent: 240 4.8% 95.9%;
-    --accent-foreground: 240 5.9% 10%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 240 5.9% 90%;
-    --input: 240 5.9% 90%;
-    --ring: 240 5.9% 10%;
+    /* Alecia core palette */
+    --alecia-blue-midnight: #061a40;
+    --alecia-blue-corporate: #163e64;
+    --alecia-blue-mid: #4370a7;
+    --alecia-blue-light: #749ac7;
+    --alecia-blue-pale: #bfd7ea;
+    --alecia-blue-ice: #e3f2fd;
+    --alecia-red-accent: #b80c09;
+    --alecia-grey-titanium: #6f7a8f;
+    --alecia-grey-steel: #aab1be;
+    --alecia-grey-chrome: #c8ccd5;
+    --alecia-grey-cloud: #e6e8ec;
+    --alecia-off-white: #fafafc;
+
     --radius: 0.5rem;
-    --chart-1: 12 76% 61%;
-    --chart-2: 173 58% 39%;
-    --chart-3: 197 37% 24%;
-    --chart-4: 43 74% 66%;
-    --chart-5: 27 87% 67%;
+
+    /* Light mode semantic mapping */
+    --background: var(--alecia-off-white);
+    --foreground: var(--alecia-blue-midnight);
+    --card: #ffffff;
+    --card-foreground: var(--alecia-blue-midnight);
+    --popover: #ffffff;
+    --popover-foreground: var(--alecia-blue-midnight);
+    --primary: var(--alecia-blue-midnight);
+    --primary-foreground: var(--alecia-off-white);
+    --secondary: var(--alecia-grey-cloud);
+    --secondary-foreground: var(--alecia-blue-midnight);
+    --muted: var(--alecia-grey-cloud);
+    --muted-foreground: var(--alecia-grey-titanium);
+    --accent: var(--alecia-blue-midnight);
+    --accent-foreground: var(--alecia-off-white);
+    --destructive: var(--alecia-red-accent);
+    --destructive-foreground: var(--alecia-off-white);
+    --border: var(--alecia-grey-chrome);
+    --input: var(--alecia-grey-cloud);
+    --ring: var(--alecia-blue-mid);
+    --chart-1: #061a40;
+    --chart-2: #163e64;
+    --chart-3: #4370a7;
+    --chart-4: #749ac7;
+    --chart-5: #bfd7ea;
   }
 
   .dark {
-    --background: 240 10% 3.9%;
-    --foreground: 0 0% 98%;
-    --card: 240 10% 3.9%;
-    --card-foreground: 0 0% 98%;
-    --popover: 240 10% 3.9%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 0 0% 98%;
-    --primary-foreground: 240 5.9% 10%;
-    --secondary: 240 3.7% 15.9%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 240 3.7% 15.9%;
-    --muted-foreground: 240 5% 64.9%;
-    --accent: 240 3.7% 15.9%;
-    --accent-foreground: 0 0% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 240 3.7% 15.9%;
-    --input: 240 3.7% 15.9%;
-    --ring: 240 4.9% 83.9%;
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
+    --background: var(--alecia-blue-midnight);
+    --foreground: var(--alecia-off-white);
+    --card: var(--alecia-blue-midnight);
+    --card-foreground: var(--alecia-off-white);
+    --popover: var(--alecia-blue-midnight);
+    --popover-foreground: var(--alecia-off-white);
+    --primary: var(--alecia-off-white);
+    --primary-foreground: var(--alecia-blue-midnight);
+    --secondary: var(--alecia-blue-corporate);
+    --secondary-foreground: var(--alecia-off-white);
+    --muted: var(--alecia-blue-corporate);
+    --muted-foreground: var(--alecia-grey-chrome);
+    --accent: var(--alecia-blue-mid);
+    --accent-foreground: var(--alecia-off-white);
+    --destructive: var(--alecia-red-accent);
+    --destructive-foreground: var(--alecia-off-white);
+    --border: var(--alecia-blue-mid);
+    --input: var(--alecia-blue-corporate);
+    --ring: var(--alecia-blue-light);
+    --chart-1: #bfd7ea;
+    --chart-2: #749ac7;
+    --chart-3: #4370a7;
+    --chart-4: #163e64;
+    --chart-5: #061a40;
   }
 }
